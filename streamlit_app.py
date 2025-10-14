@@ -181,7 +181,7 @@ col1,col2=st.columns([0.4,10])
 
 with col1:
 
-    with st.popover(":material/add_location_alt:"):
+    with st.popover(":material/add_location_alt:",help="Agregue puntos"):
         nombre = st.text_input("Nombre del punto", placeholder="pc1, pc2, ...")
         zona = int(st.selectbox("Elija la zona:", ("17", "18", "19")))
         banda = st.selectbox("Elija la banda:", ("M", "L", "K"))
@@ -202,7 +202,7 @@ with col1:
             except Exception as e:
                 st.error(f"No se pudo convertir UTM→WGS84: {e}")
 
-    with st.popover(":material/delete_forever:"):
+    with st.popover(":material/delete_forever:",help="Borre puntos"):
         nombres_existentes = [r["nombre"] for r in st.session_state.get("puntos_X", [])]
         PUNTO = st.selectbox(
             "Seleccione punto para borrar",
