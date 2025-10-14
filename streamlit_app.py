@@ -198,7 +198,7 @@ with col1:
                     st.session_state["puntos_X"].append(
                         {"nombre": nombre, "lat": lat, "lon": lon, "popup": nombre,"fecha":str(fecha)}
                     )
-                    st.success(f"Agregado: {nombre}")
+                    st.toast(f"Agregado: {nombre}")
             except Exception as e:
                 st.error(f"No se pudo convertir UTM→WGS84: {e}")
 
@@ -211,7 +211,7 @@ with col1:
 
         if st.button("Borrar punto", use_container_width=True, disabled=not nombres_existentes):
             st.session_state["puntos_X"] = [r for r in st.session_state["puntos_X"] if r["nombre"] != PUNTO]
-            st.info(f"Borrado: {PUNTO}")
+            st.toast(f"Borrado: {PUNTO}")
 
 with col2:
 
