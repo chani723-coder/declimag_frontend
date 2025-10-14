@@ -10,6 +10,7 @@ import requests
 from streamlit_lottie import st_lottie
 from pygeomag import GeoMag
 from datetime import datetime
+from streamlit.components.v1 import html
 
 # --------------------------------------------------------------------
 # Config inicial
@@ -93,6 +94,25 @@ def give_declimag(row:dict)->str:
 
 
 st.set_page_config(layout="wide",page_title="Oceans & Rivers - Ingeniería de Recursos Hídricos",page_icon="./img/favicon.ico")
+
+color_fondo="""<style>
+
+MainMenu {
+visibility:hidden;}
+
+footer {
+visibility:hidden;}
+
+[data-testid="stHeader"] {
+visibility:hidden !important;
+background:transparent;
+
+}
+"""
+
+
+st.markdown(color_fondo,unsafe_allow_html=True)
+
 
 with st.sidebar:
 
@@ -224,3 +244,10 @@ with col2:
             give_declimag(i)
 
     st.code("""Powered by: Copyright © 2025 Oceans & Rivers IT""")
+
+
+html("""
+<script>
+window.top.document.querySelectorAll(`[href*="streamlit.io"]`).forEach(e => e.setAttribute("style", "display: none;"));
+</script>
+     """)
