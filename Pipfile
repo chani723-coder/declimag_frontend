@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+folium = "*"
+streamlit = "*"
+streamlit-folium = "*"
+pyproj = "*"
+utm = "*"
+requests = "*"
+streamlit-lottie = "*"
+pygeomag = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
