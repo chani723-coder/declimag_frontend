@@ -96,37 +96,12 @@ def give_declimag(row:dict)->str:
 st.set_page_config(layout="wide",page_title="Oceans & Rivers - Ingeniería de Recursos Hídricos",page_icon="./img/favicon.ico")
 
 color_fondo="""<style>
-/* 1. El header queda transparente, sin sombra ni fondo */
-[data-testid="stHeader"] {
-    background-color: transparent !important;
-    box-shadow: none !important;
-    z-index: 1 !important;
+[data-testid="stToolbarActions"] {
+visibility:hidden !important;
 }
 
-/* 2. Oculta todo el contenido del header excepto el botón */
-[data-testid="stHeader"] > div:not(:has([data-testid="stExpandSidebarButton"])) {
-    display: none !important;
-}
-
-/* 3. Asegura visibilidad del botón */
-[data-testid="stExpandSidebarButton"] {
-    visibility: visible !important;
-    position: fixed !important;
-    top: 15px !important;
-    left: 15px !important;
-    padding: 10px !important;
-    border-radius: 50% !important;
-    z-index: 9999 !important;
-    background: linear-gradient(to left, #10d5e8, #0B60A7) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
-}
-
-/* 4. Forzamos que el ícono del botón sea blanco */
-[data-testid="stExpandSidebarButton"] svg,
-[data-testid="stExpandSidebarButton"] svg * {
-    fill: white !important;
-    stroke: white !important;
-    color: white !important;
+[data-testid="stMainMenu"] {
+visibility:hidden !important;
 }
 </style>
 """
