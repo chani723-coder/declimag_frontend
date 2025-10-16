@@ -118,6 +118,7 @@ with st.sidebar:
     with logo:
         st_lottie(campoMagnetico,height=150,speed=8)
 
+    st.page_link("https://www.oceansandrivers.pe/",label="**Oceans & Rivers**",icon=":material/captive_portal:")
     st.markdown("""
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
@@ -171,6 +172,7 @@ Este ángulo <b>varía según la ubicación y el tiempo</b>, ya que el campo mag
 </ul>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 col1,col2=st.columns([0.4,10])
@@ -239,8 +241,15 @@ with col2:
         for i in st.session_state.get("puntos_X", []):
             give_declimag(i)
 
-    st.code("""Powered by: Copyright © 2025 Oceans & Rivers IT""")
-
+    footer1,footer2,footer3,footer4,=st.columns([1,0.2,0.2,0.2])
+    with footer1:
+        st.code("""Powered by: Copyright © 2025 Oceans & Rivers IT""")
+    with footer2:
+        st.page_link("https://www.facebook.com/profile.php?id=61576324116137",label="Facebook",icon=":material/captive_portal:")
+    with footer3:
+        st.page_link("https://www.linkedin.com/company/oceans-rivers-consulting/",label="Linkedin",icon=":material/captive_portal:")
+    with footer4:
+        st.page_link("https://www.instagram.com/oceansandrivers_consulting?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D",label="Instagram",icon=":material/captive_portal:")
 
 html("""
 <script>
