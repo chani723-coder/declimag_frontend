@@ -185,7 +185,7 @@ with col1:
         banda = st.selectbox("Elija la banda:", ("M", "L", "K"))
         este = st.number_input("Este (mE)", value=0.0)
         norte = st.number_input("Norte (mN)", value=0.0)
-        fecha=st.date_input("Fecha")
+        fecha=st.date_input("Fecha","today","2025-01-01")
 
         if st.button("Agregar punto", type="primary", use_container_width=True):
             try:
